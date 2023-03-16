@@ -1,0 +1,52 @@
+<!--
+<div class="filters flex-container">
+  <button class="btn btn-primary active" (click)="ChooseACategory('all')">All</button>
+  <button class="btn btn-primary" (click)="ChooseACategory('web')">Web Development</button>
+  <button class="btn btn-primary" (click)="ChooseACategory('brand')">Branding</button>
+  <button class="btn btn-primary" (click)="ChooseACategory('Mob')">Mobile App Designl</button>
+
+</div>-->
+<section class="site-section" id="portfolio-section">
+
+
+  <div class="container">
+
+    <div class="row mb-3">
+      <div class="col-12 text-center" data-aos="fade">
+        <h2 class="section-title mb-3">Portfolio</h2>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-5" data-aos="fade-up">
+      <div id="filters" class="filters text-center button-group col-md-7">
+        <button class="btn btn-primary" data-filter="*" [ngClass]="{'active':categoryPortfolio.All }" (click)="ChooseACategory('All')"  >All</button>
+        <button class="btn btn-primary" data-filter=".web" [ngClass]="{'active':categoryPortfolio.Web }" (click)="ChooseACategory('Web')" >Web</button>
+        <button class="btn btn-primary" data-filter=".design"[ngClass]="{'active':categoryPortfolio.Design }"  (click)="ChooseACategory('Design')"  >Design</button>
+        <button class="btn btn-primary" data-filter=".brand"  [ngClass]="{'active':categoryPortfolio.Brand }"  (click)="ChooseACategory('Brand')"  >Brand</button>
+        <button class="btn btn-primary" data-filter=".brand" [ngClass]="{'active':categoryPortfolio.Apps }"  (click)="ChooseACategory('Apps')"  >Apps</button>
+      </div>
+    </div>
+
+    <div id="posts" class="row no-gutter" >
+      <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4"
+           *ngFor="let portfolio of (Portfolio$ | async | sortingPortfolio: type)" >
+        <a href="{{portfolio.Link}}" class="item-wrap fancybox" data-fancybox="gallery2">
+
+          <quill-view-html [content]="portfolio.Photo" ></quill-view-html>
+          <img class="light" src="assets/icon.png" alt="">
+        </a>
+
+        <div class="g_item_text">
+          <a href="{{portfolio.Link}}">
+            <h4>{{portfolio.Name}}</h4>
+          </a>
+          <quill-view-html [content]="portfolio.description"></quill-view-html>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</section>
+

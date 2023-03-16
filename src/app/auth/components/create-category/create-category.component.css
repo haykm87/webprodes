@@ -1,0 +1,20 @@
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-control_admin {
+  display: block;
+  color: #888;
+  margin-bottom: .8rem;
+}
+.form-control_admin.invalid {
+  color: #dc3545;
+}
+.form-control_admin input {
+  border-color: #dc3545;
+}
+
+.form-control_admin.validation {
+  color: #dc3545;
+}

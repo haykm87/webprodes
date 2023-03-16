@@ -1,0 +1,33 @@
+.border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.site-section {
+  padding: 2.5em 0;
+}
+
+section {
+  display: block;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.team-member h3 {
+  color: #000;
+  margin: 0;
+  bottom: 0;
+  font-size: 1.2rem;
+}
+
+.team-member .position {
+  color: #cccccc;
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .05rem;
+}
+
+
+

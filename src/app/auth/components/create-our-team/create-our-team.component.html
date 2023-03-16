@@ -1,0 +1,35 @@
+<app-backend-error-message *ngIf="Backenderrors$ | async"
+                           [Backenderrors] ="(Backenderrors$ | async)"
+></app-backend-error-message>
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="form-control_admin">
+    <label>Name</label>
+    <input type='text' formControlName='Name' id='Name'>
+    <small *ngIf="form.get('Name').touched && form.get( 'Name').invalid ">lracreq Name</small>
+  </div>
+  <div class="form-control_admin">
+    <label>description</label>
+    <input type='text' formControlName='description' id='description'>
+    <small *ngIf="form.get('description').touched && form.get( 'description').invalid ">lracreq Name</small>
+  </div>
+  <!--<div class="form-control ">
+    <label>author</label>
+    <input type='text' formControlName='author' id='author'>
+    <div class="validation" *ngIf="form.get('author').touched && form.get('author').invalid ">
+      <small *ngIf="form.get('password')?.hasError('required')">
+        lracreq hexinakin
+      </small>
+    </div>
+  </div>-->
+
+  <div class="form-control_admin">
+    <label>Photo</label>
+    <quill-editor formControlName='Photo'></quill-editor>
+  </div>
+
+  <button type="submit " class="btn btn-dark " [disabled]='form.invalid && (isSubmiting$ | async)'>Our Team</button>
+  <!--[disabled]='form.invalid'-->
+
+</form>
+

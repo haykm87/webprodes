@@ -1,0 +1,39 @@
+
+<form [formGroup]='form' (ngSubmit)='submit()'>
+  <h2>Login form</h2>
+  <div class="alert alert-info" *ngIf="message">
+    <small> {{message}}</small>
+  </div>
+  <div class="form-control_admin">
+    <label>Email</label>
+    <input type="email" id="email" formControlName="email">
+
+    <div class="validation" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      <small *ngIf="form.get('email')?.hasError('email')"> emaili sxal</small>
+      <small *ngIf="form.get('email')?.hasError('required')"> lracvat che emaily</small>
+    </div>
+
+  </div>
+ <app-backend-error-message *ngIf="Backenderrors$ | async"
+  [Backenderrors] ="(Backenderrors$ | async)"
+ ></app-backend-error-message>
+  <div class="form-control_admin">
+    <label>Password</label>
+    <input type="password" id="password " formControlName="password">
+    <div class="validation " *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+      <small *ngIf="form.get('password')?.hasError('required')"> lracvat che passwordy</small>
+      <small *ngIf="form.get('password')?.hasError('minlength')">
+        erkarutyuny karc e, petq e lini minimum
+        {{form.get('password')?.hasError('minlength')}}<!--requiredLength-->
+        bayc hima {{form.get('password')?.hasError('minlength.actualLength')  }} e
+      </small>
+    </div>
+  </div>
+
+  <button type="submit " class="btn btn-primary" [disabled]=" (isSubmiting$ | async) || form.invalid ">Enter</button>
+  <!--|| submited-->
+</form>
+<!--
+<div class="denger" *ngIf="auth.errors$ | async as errorIm">
+  {{errorIm}}
+</div>-->

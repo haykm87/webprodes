@@ -1,0 +1,55 @@
+<div *ngIf="!screen.isLarge()" class='title-bar-small' >
+  <div class="small-icon-holder">
+    <a (click)="ClickMenu(true)"><span class="icon-menu h3"></span></a>
+  </div>
+  <div class="small-image-holder">
+    <img src="../assets/logo.png" alt="Car fest logo" class="small-image">
+  </div>
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle" (click)="ClickMenu(false)">
+
+          </span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body">
+      <ul class="site-nav-wrap">
+
+        <li routerLinkActive="active"><a [routerLink]='["/"]'>Home</a></li>
+        <li routerLinkActive="active"><a [routerLink]='["about-us"]'>About</a></li>
+        <li routerLinkActive="active"><a [routerLink]='["portfolio"]'>Portfolio</a></li>
+        <li routerLinkActive="active"><a [routerLink]='["service"]'>Service</a></li>
+        <li routerLinkActive="active"><a [routerLink]='["contact"]'>Contact</a></li>
+        <!--  <ng-container *ngIf="isLogined$ | async ">
+          </ng-container> -->
+        <li *ngIf="isLogined$ | async " style="color: white"> {{(CurrentUser$ | async).email}} </li>
+
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+<nav *ngIf="screen.isLarge()" >
+
+    <ul >
+      <li  >   <img src="../assets/logo.png" alt="Car fest logo" ></li>
+      <li routerLinkActive="active"><a [routerLink]='["/"]' >Home</a></li>
+      <li routerLinkActive="active"><a [routerLink]='["about-us"]' >About</a></li>
+      <li routerLinkActive="active"><a [routerLink]='["portfolio"]'>Portfolio</a></li>
+      <li routerLinkActive="active"><a [routerLink]='["service"]'>Service</a></li>
+      <li routerLinkActive="active"routerLinkActive="active"><a [routerLink]='["contact"]'>Contact</a></li>
+    <!--  <ng-container *ngIf="isLogined$ | async ">
+      </ng-container> -->
+      <li *ngIf="isLogined$ | async " style="color: white"> {{(CurrentUser$ | async).email}} </li>
+
+    </ul>
+  </nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+
+
+

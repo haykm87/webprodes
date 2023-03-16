@@ -1,0 +1,16 @@
+<swiper
+  [slidesPerView]="1"
+  [spaceBetween]="50"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange()"
+  [navigation]="true"
+  [pagination]="{ clickable: true }"
+  [scrollbar]="{ draggable: true }"
+>
+  <ng-template swiperSlide *ngFor="let sl of (slider$ | async)">
+    <quill-view-html [content]="sl.Photo"></quill-view-html>
+
+  </ng-template>
+
+
+</swiper>

@@ -1,0 +1,88 @@
+.team-member h3 {
+  color: #000;
+  margin: 0;
+  bottom: 0;
+  font-size: 1.2rem;
+}
+
+.team-member .position {
+  color: #cccccc;
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .05rem;
+}
+
+.section-title {
+  color: #007bff;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.team-member figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden; }
+
+.team-member .social {
+  position: absolute;
+  margin: 0;
+  top: 0px;
+
+  bottom: 0;
+  padding: 10px;
+  -webkit-transform: translateX(-101%);
+  -ms-transform: translateX(-101%);
+  transform: translateX(-101%);
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  background: #007bff; }
+
+.team-member .social li {
+  list-style: none; }
+.team-member .social li a {
+  display: inline-block;
+  padding: 5px;
+  color: #fff;
+}
+
+.team-member:hover .social {
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%); }
+
+.team-member .position {
+  color: #cccccc;
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .05rem; }
+
+.team-member h3 {
+  color: #000;
+  margin: 0;
+  bottom: 0;
+  font-size: 1.2rem; }
+
+ul.social {
+  z-index: 100;
+}
+ul.social {
+  z-index: 100;
+}
+
+ul.social {
+  z-index: 100;
+}
+:host::ng-deep.ql-container .ql-editor {
+  padding: 0px !important;
+}

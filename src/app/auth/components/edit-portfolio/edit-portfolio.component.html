@@ -1,0 +1,49 @@
+<p>edit-portfolio works!</p>
+<form *ngIf="formPortfolio" [formGroup]="formPortfolio" (ngSubmit)="OnSubmit()">
+
+  <div class="form-control_admin">
+    <label>Name</label>
+    <input type='text' formControlName='Name' id='Name'>
+    <small *ngIf="formPortfolio.get('Name').touched && formPortfolio.get( 'Name').invalid ">lracreq Name</small>
+  </div>
+
+
+  <div class="form-control_admin">
+
+    <label> Category</label>
+
+    <select class="form-control_admin" id="category" formControlName='category'  formControlName='category' >
+      <option *ngFor="let item of (Category$ | async) " [ngValue]="item.name">{{item.name}}</option>
+
+    </select>
+  </div>
+
+  <div class="form-control_admin">
+    <label>description</label>
+    <quill-editor formControlName='description'></quill-editor>
+  </div>
+
+  <div class="form-control_admin">
+    <label>Link</label>
+    <input type='text' formControlName='Link' id='Link'>
+  </div>
+  <!-- <div class="form-control ">
+    <label>author</label>
+    <input type='text' formControlName='author' id='author'>
+    <div class="validation" *ngIf="form.get('author').touched && form.get('author').invalid ">
+      <small *ngIf="form.get('password')?.hasError('required')">
+        lracreq hexinakin
+      </small>
+    </div>
+  </div>-->
+
+  <div class="form-control_admin">
+    <label>Photo</label>
+    <quill-editor formControlName='Photo'></quill-editor>
+
+  </div>
+
+  <button type="submit " class="btn btn-dark " [disabled]='formPortfolio.invalid && (isSubmiting$ | async)'>Edit Portfolio</button>
+  <!--[disabled]='form.invalid'-->
+
+</form>

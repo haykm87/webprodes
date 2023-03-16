@@ -1,0 +1,129 @@
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center
+}
+
+.flex-container > button {
+
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 20px;
+}
+
+.filters .btn {
+  border-color: transparent;
+  font-size: .8rem;
+  padding: 8px 20px;
+  margin: 5px;
+  background: rgba(52, 58, 64, 0.05);
+  color: #343a40;
+}
+
+.filters .btn.active {
+  background: #007bff !important;
+  color: #fff;
+  border-color: #007bff !important;
+}
+
+.section-title {
+  color: #007bff;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.btn {
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 10px 30px;
+}
+
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.item .item-wrap {
+  display: block;
+  position: relative;
+}
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.item .item-wrap:after {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .3s all ease-in-out;
+  -o-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+
+
+:host::ng-deep.ql-snow .ql-editor img {
+  max-width: 100%;
+  height: auto;
+}
+:host::ng-deep.ql-snow .ql-editor
+{
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.g_item_text h4 {
+  color: #222222;
+  font-size: 21px;
+  margin-top: 22px;
+  transition: all 300ms linear 0s;
+}
+.g_item_text p {
+  margin-bottom: 0px;
+}
+.g_item_text{
+  text-align: center;
+}
+
+.light {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+}
+
+a:hover :host::ng-deep.ql-snow .ql-editor{
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-image: -moz-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+  background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+  background-image: -ms-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+  position: absolute;
+  opacity: 0;
+  transition: all 300ms ease;
+}
+

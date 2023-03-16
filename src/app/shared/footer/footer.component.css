@@ -1,0 +1,19 @@
+.site-footer {
+  padding: 4em 0;
+  background: #333333;
+}
+
+
+.site-footer .footer-heading {
+  font-size: 16px;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .site-footer {
+    padding: 8em 0;
+  }
+}
+
+.site-footer p {
+  color: #737373;
+}

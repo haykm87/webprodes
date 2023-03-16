@@ -1,0 +1,28 @@
+<div *ngIf="!screen.isLarge()" class='title-bar-small'>
+  <div class="small-icon-holder">
+    <a><img src="../assets/menu.png"></a>
+  </div>
+  <div class="small-image-holder">
+    <img src="../assets/logo.png" alt="Car fest logo" class="small-image">
+  </div>
+</div>
+<nav *ngIf="screen.isLarge()" >
+
+  <ul>
+    <li  >   <img src="../assets/logo.png" alt="Car fest logo" ></li>
+    <li routerLinkActive="active"><a [routerLink]='["/"]'>Home</a></li>
+    <ng-container *ngIf="isLogined$ | async" >
+    <li routerLinkActive="active"><a [routerLink]='["createabout"]'>About</a></li>
+    <li routerLinkActive="active"><a [routerLink]='["Services"]'>Services</a></li>
+    <li routerLinkActive="active"><a [routerLink]='["Portfolio"]'>Portfolio</a></li>
+    <li routerLinkActive="active"><a [routerLink]='["ourteam"]'>Our team</a></li>
+    <li routerLinkActive="active"><a [routerLink]='["Slider"]'>Slider</a></li>
+    <li routerLinkActive="active"><a [routerLink]='["dashboard"]'>dashboard</a></li>
+    <!--  <ng-container *ngIf="isLogined$ | async ">
+      </ng-container> -->
+    <li style="color: white"> {{(CurrentUser$ | async).email}} </li>
+      <li style="color: white" (click)="Logout()"> Logout </li>
+    </ng-container>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
